@@ -53,7 +53,7 @@ const emailHelper = async (to, subject, text) => {
 <body>
   <div class="container">
     <h1>¡Hola!</h1>
-    <p>Este es un correo electrónico de prueba</p>
+    <p>${text}</p>
     <p>Servidor de prueba</p>
     <a href="https://example.com" class="button">Visitar Web</a>
   </div>
