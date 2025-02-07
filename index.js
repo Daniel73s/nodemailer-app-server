@@ -13,7 +13,9 @@ app.post("/send-email", async (req, res) => {
 
   try {
     let info = await emailHelper(to, subject, text);
-    res.status(200).send(`Email sent: ${info.response}`);
+    res.status(200).json({
+      message:`Email enviado: ${info.response}`
+    });
   } catch (error) {
     res.status(500).send("Error sending email");
   }
