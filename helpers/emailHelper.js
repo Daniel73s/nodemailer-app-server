@@ -31,7 +31,7 @@ const emailHelper = async (to, subject, text) => {
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
         }
         .header {
             background-color: #0073e6;
@@ -41,11 +41,13 @@ const emailHelper = async (to, subject, text) => {
             font-size: 20px;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
         .content {
             padding: 20px;
             font-size: 16px;
             color: #333;
+            box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
         }
         .content p {
             margin: 10px 0;
@@ -57,6 +59,7 @@ const emailHelper = async (to, subject, text) => {
             padding: 10px;
             border-top: 1px solid #ddd;
             margin-top: 10px;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -72,10 +75,11 @@ const emailHelper = async (to, subject, text) => {
             <p><strong>Tipo de Reserva:</strong> [Cena/Desayuno/Almuerzo]</p>
             <p><strong>Mensaje:</strong> [Mensaje]</p>
         </div>
-        <div class="footer">Reserva enviada</div>
+        <div class="footer">Reserva Recibida</div>
     </div>
 </body>
 </html>
+
 `;
     // Set up email options
     let mailOptions = {
