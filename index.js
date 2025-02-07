@@ -1,8 +1,9 @@
 const express = require("express");
 const emailHelper = require("./helpers/emailHelper");
-
+const cors = require('cors');
 const app = express();
-
+// Configuración básica (permite todas las solicitudes)
+app.use(cors());
 // Middleware
 app.use(express.json());
 
