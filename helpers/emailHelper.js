@@ -13,50 +13,67 @@ const emailHelper = async (to, subject, text) => {
     // Contenido HTML del correo
     const htmlContent = `
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Correo Estilizado</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #007BFF;
-    }
-    p {
-      line-height: 1.6;
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0073e6;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .content {
+            padding: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        .content p {
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>¡Hola!</h1>
-    <p>${text}</p>
-    <p>Servidor de prueba</p>
-    <a href="https://example.com" class="button">Visitar Web</a>
-  </div>
+    <div class="container">
+        <div class="header">Confirmación de Reserva</div>
+        <div class="content">
+            <p><strong>Nombre Completo:</strong> [Nombre Completo]</p>
+            <p><strong>Correo Electrónico:</strong> [Correo]</p>
+            <p><strong>Número de Celular:</strong> [Número de Celular]</p>
+            <p><strong>Número de Sillas:</strong> [Número de Sillas]</p>
+            <p><strong>Fecha:</strong> [Fecha]</p>
+            <p><strong>Tipo de Reserva:</strong> [Cena/Desayuno/Almuerzo]</p>
+            <p><strong>Mensaje:</strong> [Mensaje]</p>
+        </div>
+        <div class="footer">Reserva enviada</div>
+    </div>
 </body>
 </html>
 `;
