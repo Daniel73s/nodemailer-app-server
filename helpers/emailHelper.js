@@ -86,7 +86,7 @@ const emailHelper = async (to, subject, text) => {
         from: '"Ing. Daniel Luque" <daniel.luque.tja@gmail.com>',
         to: to,
         subject: subject,
-        html: htmlContent
+        html: text
     };
 
     // Send the email
