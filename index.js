@@ -1,6 +1,7 @@
 const express = require("express");
 const emailHelper = require("./helpers/emailHelper");
 const cors = require('cors');
+const emailHelperText = require("./helpers/emailHelperText");
 const app = express();
 // Configuración básica (permite todas las solicitudes)
 app.use(cors());
@@ -8,11 +9,24 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.post("/send-email", async (req, res) => {
+app.post("/send-email-html", async (req, res) => {
   const { to, subject, text } = req.body;
 
   try {
     let info = await emailHelper(to, subject, text);
+    res.status(200).json({
+      message:`Email enviado: ${info.response}`
+    });
+  } catch (error) {
+    res.status(500).send("Error sending email");
+  }
+});
+
+app.post("/send-email-text", async (req, res) => {
+  const { to, subject, text } = req.body;
+
+  try {
+    let info = await emailHelperText(to, subject, text);
     res.status(200).json({
       message:`Email enviado: ${info.response}`
     });

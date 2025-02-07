@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config();
-const emailHelper = async (to, subject, text) => {
+const emailHelperText = async (to, subject, text) => {
     // Create a transporter
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -15,7 +15,7 @@ const emailHelper = async (to, subject, text) => {
         from: '"Ing. Daniel Luque" <daniel.luque.tja@gmail.com>',
         to: to,
         subject: subject,
-        html: text
+        text: text
     };
 
     // Send the email
@@ -29,4 +29,4 @@ const emailHelper = async (to, subject, text) => {
     }
 };
 
-module.exports = emailHelper;
+module.exports = emailHelperText;
