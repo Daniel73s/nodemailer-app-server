@@ -6,7 +6,7 @@ const app = express();
 // Configuración básica (permite todas las solicitudes)
 // Configura CORS para permitir solo un dominio específico
 const corsOptions = {
-  origin: 'https://duodigitalweb.com', // Reemplaza con tu dominio
+  origin: 'https://cafeteria.duodigitalweb.com', // Reemplaza con tu dominio
   optionsSuccessStatus: 200, // Algunos navegadores antiguos (IE11) requieren esto
 };
 app.use(cors(corsOptions));
