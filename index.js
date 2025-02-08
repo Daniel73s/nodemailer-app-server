@@ -4,7 +4,12 @@ const cors = require('cors');
 const emailHelperText = require("./helpers/emailHelperText");
 const app = express();
 // Configuración básica (permite todas las solicitudes)
-app.use(cors());
+// Configura CORS para permitir solo un dominio específico
+const corsOptions = {
+  origin: 'https://duodigitalweb.com', // Reemplaza con tu dominio
+  optionsSuccessStatus: 200, // Algunos navegadores antiguos (IE11) requieren esto
+};
+app.use(cors(corsOptions));
 // Middleware
 app.use(express.json());
 
